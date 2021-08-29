@@ -1,5 +1,6 @@
 let playerA = 0;
 let playerB = 0;
+let advBtn = document.getElementById("advanceBtn")
 let result;
 
 
@@ -19,11 +20,17 @@ const avanzar = () => {
 const checkWinner = () =>{
     if(playerA >= 100 && playerB >= 100){
         result= "Es un empate"
+        document.getElementById("winner").innerHTML=result;
+        document.getElementById("advanceBtn").attr("disabled", "disabled")
     }else if(playerA >= 100 || playerB >= 100){
         if(playerA > playerB){
         result="JUGADOR A GANA!"
+        document.getElementById("winner").innerHTML=result;
+        advBtn.disabled=true
         }else{
         result="JUGADOR B GANA!"}
+        document.getElementById("winner").innerHTML=result;
+        advBtn.disabled=true
     }   
 }
 const carrera = () =>{
@@ -33,6 +40,9 @@ const carrera = () =>{
     console.log("El jugador A avanza hasta " + playerA)
     playerB += avanzar()
     console.log("El jugador B avanza hasta " + playerB)
+    console.log(result)
+    checkWinner()
+
     return result;
 }
 const move = () => {
@@ -44,7 +54,6 @@ const move = () => {
     elemB.style.width = widthB + '%';
     elemA.innerHTML = widthA * 1  + '%'
     elemB.innerHTML = widthB * 1  + '%'
-    console.log("what")
   }
 document.getElementById("advanceBtn").addEventListener("click", carrera); 
 document.getElementById("advanceBtn").addEventListener("click", move); 
