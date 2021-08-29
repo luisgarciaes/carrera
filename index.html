@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
     <title>Carrera</title>
 </head>
 <body>
     
     <h1>Jugador A</h1>
-    <div class="w3-light-grey">
-        <div id="barA" class="w3-container w3-green w3-center" style="width:0">0%</div>
+    <div class="w3-light-grey w3-round" id="progBarA" style="width:35%">
+        <div id="barA" class="w3-container w3-round w3-green w3-center" style="width:0">0%</div>
       </div>    
     <h1>Jugador B</h2>
-        <div class="w3-light-grey">
-            <div id="barB" class="w3-container w3-green w3-center" style="width:0">0%</div>
+        <div class="w3-light-grey w3-round" id="progBarB" style="width:35%">
+            <div id="barB" class="w3-container w3-round w3-green w3-center" style="width:0">0%</div>
           </div>
-    <div>
+          <br>
+          <br>
+    <div id="buttons">
         <br>
         <button id="advanceBtn">Avanzar</button>
     </div>
@@ -26,5 +29,6 @@
         <h1 id="winner"></h1>
     </div>
     <script src="./main.js"></script>
+
 </body>
 </html>
