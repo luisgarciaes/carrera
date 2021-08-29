@@ -21,7 +21,7 @@ const checkWinner = () =>{
     if(playerA >= 100 && playerB >= 100){
         result= "Es un empate"
         document.getElementById("winner").innerHTML=result;
-        document.getElementById("advanceBtn").attr("disabled", "disabled")
+        advBtn.disabled=true
     }else if(playerA >= 100 || playerB >= 100){
         if(playerA > playerB){
         result="JUGADOR A GANA!"
