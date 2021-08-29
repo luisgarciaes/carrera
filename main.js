@@ -1,36 +1,51 @@
+let playerA = 0;
+let playerB = 0;
+let result;
+
+
 const avanzar = () => {
-    let result = 0;
-    result = Math.floor((Math.random() * 6) + 1);
+    let random = 0;
+    random = Math.floor((Math.random() * 6) + 1);
     let moves = 0;
-    if (result === 3) {
+    if (random === 3) {
         moves = 1;
-    }else if(result > 3){
+    }else if(random > 3){
         moves=2
     }else{
         moves=3;
     }
     return moves;
 };
+const checkWinner = () =>{
+    if(playerA >= 100 && playerB >= 100){
+        result= "Es un empate"
+    }else if(playerA >= 100 || playerB >= 100){
+        if(playerA > playerB){
+        result="JUGADOR A GANA!"
+        }else{
+        result="JUGADOR B GANA!"}
+    }   
+}
 const carrera = () =>{
-    let playerA = 0;
-    let playerB = 0;
-    let result;
-    while (true) {
-        playerA += avanzar();
-        console.log("El jugador A avanza hasta " + playerA)
-        playerB += avanzar()
-        console.log("El jugador B avanza hasta " + playerB)
-        if(playerA >= 100 && playerB >= 100){
-            result= "empate"
-            break;
-        }else if(playerA >= 100 || playerB >= 100){
-            if(playerA > playerB){
-            result="JUGADOR A GANA!"
-            break;
-            }else{
-            result="JUGADOR B GANA!"
-            break;}
-        }
-    }
+
+    checkWinner()
+    playerA += avanzar();
+    console.log("El jugador A avanza hasta " + playerA)
+    playerB += avanzar()
+    console.log("El jugador B avanza hasta " + playerB)
     return result;
 }
+const move = () => {
+    let elemA = document.getElementById("barA");   
+    let elemB = document.getElementById("barB");   
+    let widthA = playerA;
+    let widthB = playerB;
+    elemA.style.width = widthA + '%';
+    elemB.style.width = widthB + '%';
+    elemA.innerHTML = widthA * 1  + '%'
+    elemB.innerHTML = widthB * 1  + '%'
+    console.log("what")
+  }
+document.getElementById("advanceBtn").addEventListener("click", carrera); 
+document.getElementById("advanceBtn").addEventListener("click", move); 
+
