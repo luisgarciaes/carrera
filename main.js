@@ -22,15 +22,18 @@ const checkWinner = () =>{
         result= "Es un empate"
         document.getElementById("winner").innerHTML=result;
         advBtn.disabled=true
+        console.log(result)
     }else if(playerA >= 100 || playerB >= 100){
         if(playerA > playerB){
         result="JUGADOR A GANA!"
         document.getElementById("winner").innerHTML=result;
         advBtn.disabled=true
+        console.log(result)
         }else{
         result="JUGADOR B GANA!"}
         document.getElementById("winner").innerHTML=result;
         advBtn.disabled=true
+        console.log(result)
     }   
 }
 const carrera = () =>{
@@ -40,7 +43,6 @@ const carrera = () =>{
     console.log("El jugador A avanza hasta " + playerA)
     playerB += avanzar()
     console.log("El jugador B avanza hasta " + playerB)
-    console.log(result)
     checkWinner()
 
     return result;
