@@ -12,23 +12,23 @@ const avanzar = () => {
     return moves;
 };
 const carrera = () =>{
-    let player1 = 0;
-    let player2 = 0;
+    let playerA = 0;
+    let playerB = 0;
     let result;
     while (true) {
-        player1 += avanzar();
-        console.log("El jugador uno avanza hasta " + player1)
-        player2 += avanzar()
-        console.log("El jugador dos avanza hasta " + player2)
-        if(player1 >= 20 && player2 >= 20){
+        playerA += avanzar();
+        console.log("El jugador A avanza hasta " + playerA)
+        playerB += avanzar()
+        console.log("El jugador B avanza hasta " + playerB)
+        if(playerA >= 100 && playerB >= 100){
             result= "empate"
             break;
-        }else if(player1 >= 20 || player2 >= 20){
-            if(player1>player2){
-            result="player1 wins"
+        }else if(playerA >= 100 || playerB >= 100){
+            if(playerA > playerB){
+            result="JUGADOR A GANA!"
             break;
             }else{
-            result="player2 wins"
+            result="JUGADOR B GANA!"
             break;}
         }
     }
